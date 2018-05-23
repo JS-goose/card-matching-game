@@ -53,6 +53,10 @@ h1 {
     color: lightgoldenrodyellow;
     cursor: pointer;
 }
+/* Used to hide cards */
+.hidden {
+    visibility: hidden;
+}
 /* ****** */
 /* Footer */
 /* ****** */
