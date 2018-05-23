@@ -12,6 +12,18 @@ h1 {
 /* ****** */
 /* Content */
 /* ****** */
+/* Info Area */
+.info-area {
+    display: flex;
+    justify-content: center;
+}
+.reset {
+    margin-left: 20%;
+}
+.moves {
+    margin-left: 10%;
+}
+/* Play Area */
 .cards-list {
     display: grid;
     grid-template-columns: repeat(4, 200px);
