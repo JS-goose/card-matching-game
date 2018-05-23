@@ -2,6 +2,8 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    height: 100%;
+    width: 100%;
 }
 /* ****** */
 /* Header */
@@ -28,8 +30,16 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     justify-content: center;
-    grid-gap: 10px;
+    grid-gap: 20px;
     list-style: none;
+    border: 1px solid black;
+    background-color: lightblue;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.play-wrapper {
+    display: grid;
+    justify-content: center;
 }
 .card {
     width: 150px;
