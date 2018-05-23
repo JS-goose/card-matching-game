@@ -1,6 +1,8 @@
-let icons = document.querySelector('li');
+const icons = document.querySelector('.cards');
 
-icons.addEventListener('click', function(evt){
+function removeHidden(evt) {
     evt.target.classList.remove('hidden');
-});
+    console.log("working");
+}
 
+icons.addEventListener('click', removeHidden);
