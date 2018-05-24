@@ -1,11 +1,17 @@
 const icons = document.querySelector('.cards-wrapper');
 const cards = [...document.querySelectorAll('.card')];
 const openCards = [];
+const reset = document.querySelector('.reset');
 
+reset.addEventListener('click', gameReset);
+// shuffles the "open cards"
+function gameReset() {
+    shuffle(cards);
+}
 // remove the hidden class from cards and push clicked card to openCards array
 function removeHidden(evt) {
     evt.target.firstElementChild.classList.toggle('hidden');
-    openCards.push(evt.target);  
+    openCards.push(evt.target); 
 }
 
 icons.addEventListener('click', removeHidden);
