@@ -1,7 +1,7 @@
 const icons = document.querySelectorAll(".icon");
-const cards = [...document.querySelectorAll(".card")];
 let openCards = [];
 const reset = document.querySelector(".reset");
+const cards = [...document.querySelectorAll(".card")];
 
 reset.addEventListener("click", gameReset);
 // shuffles the "open cards"
@@ -10,15 +10,14 @@ function gameReset() {
   openCards = [];
 }
 
-// loop to add event listeners to all icons
-icons.forEach(function(evt){
-    this.addEventListener('click', addOpenCards);
-});
-
-// clicked cards are added to the open cards array for comparison
-function addOpenCards(evt) {
-  openCards.push(evt.target);
+// loop to add event listeners to all cards
+for (let card of cards) {
+    card.addEventListener("click", function() {
+        card.classList.add('open','show');
+        openCards.push(card);
+    });
 }
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
