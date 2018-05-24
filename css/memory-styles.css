@@ -44,20 +44,21 @@ h1 {
     display: grid;
     align-content: center;
     justify-content: center;
-    font-size: 5em;
+    font-size: 0;
     width: 150px;
     height: 150px;
     border: 1px solid lightcoral;
-    background-color: lightskyblue;
+    background-color: rgba(62, 65, 104, 0.6);
     color: lightgoldenrodyellow;
     cursor: pointer;
 }
-/* .icon {
-    visibility: hidden;
-} */
-/* Used to hide cards */
-.hidden {
-    visibility: hidden;
+.card.open {
+    transform: rotateY(0);
+    cursor: default;
+    background-color: rgba(12, 28, 220, 0.6);
+}
+.card.show {
+    font-size: 3em;
 }
 /* ****** */
 /* Footer */
