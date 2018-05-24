@@ -29,13 +29,12 @@ h1 {
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 200px);
-    justify-content: center;
+    justify-items: center;
     grid-gap: 20px;
     list-style: none;
     border: 1px solid black;
     background-color: lightblue;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 3% 0 3% 0;
 }
 .play-wrapper {
     display: grid;
