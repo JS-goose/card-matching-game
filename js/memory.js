@@ -1,8 +1,8 @@
-const icons = document.querySelector('.cards');
-
+const icons = document.querySelector('.cards-wrapper');
+const cards = [...document.querySelectorAll('.card')];
+// Function to remove the hidden class from cards
 function removeHidden(evt) {
     evt.target.firstElementChild.classList.toggle('hidden');
-    console.log("working");
 }
 
 icons.addEventListener('click', removeHidden);

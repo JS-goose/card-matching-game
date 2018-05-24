@@ -26,7 +26,7 @@ h1 {
     margin-left: 5%;
 }
 /* Play Area */
-.cards {
+.cards-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     justify-items: center;
