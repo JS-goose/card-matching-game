@@ -8,13 +8,9 @@ reset.addEventListener('click', gameReset);
 function gameReset() {
     shuffle(cards);
 }
-// remove the hidden class from cards and push clicked card to openCards array
-function removeHidden(evt) {
-    evt.target.firstElementChild.classList.toggle('hidden');
-    openCards.push(evt.target); 
-}
 
-icons.addEventListener('click', removeHidden);
+/* Removed the need for a function to toggle the .hidden class, will rework later */
+icons.addEventListener('click',);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {

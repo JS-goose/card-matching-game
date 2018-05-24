@@ -60,6 +60,12 @@ h1 {
 .card.show {
     font-size: 3em;
 }
+.card.match {
+    font-size: 3em;
+    cursor: default;
+    background-color: lightcoral;
+    border: 1px solid white;
+}
 /* ****** */
 /* Footer */
 /* ****** */
