@@ -1,9 +1,9 @@
 const reset = document.querySelector(".reset"); // reset button
 const cards = [...document.querySelectorAll(".card")]; //array of cards
-const cardList = document.querySelector('cards-list'); //card deck
+const cardList = document.querySelector(".cards-wrapper"); //card deck
 let openCards = [];
-let shuffledArr = shuffle(cards);
 
+document.onLoad = gameStart();
 // shuffles cards and resets current game
 reset.addEventListener("click", gameReset);
 
@@ -13,8 +13,19 @@ function gameReset() {
 }
 
 // Starts the game
-function gameStart() {}
-gameStart();
+function gameStart() {
+  // Loop over existing cards
+  let shuffledArr = shuffle(cards);
+
+  for (let i = 0; i < cards.length; i++) {
+    cardList.innerHTML = "";
+    for (let card of cards) {
+      cardList.appendChild(card);
+    }
+    // display shuffled cards
+  }
+}
+
 
 // loop to add event listeners to all cards
 for (let card of cards) {
@@ -36,13 +47,6 @@ for (let card of cards) {
   });
 }
 
-// Loop over existing cards
-for (let i = 0; i < cards.length; i++) {
-  
-  for (let card of cards) {
-  }
-  // display shuffled cards
-}
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(cards) {
   var currentIndex = cards.length,
