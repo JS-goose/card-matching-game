@@ -2,11 +2,12 @@ const icons = document.querySelectorAll(".icon");
 let openCards = [];
 const reset = document.querySelector(".reset");
 const cards = [...document.querySelectorAll(".card")];
-const cardList = document.querySelector('.card-list');
+const cardList = document.querySelectorAll(".cards-list");
 let shuffledArr = shuffle(cards);
 
+// shuffles cards and resets current game
 reset.addEventListener("click", gameReset);
-// shuffles the "open cards"
+
 function gameReset() {
   shuffle(cards);
   openCards = [];
@@ -14,12 +15,21 @@ function gameReset() {
 
 // loop to add event listeners to all cards
 for (let card of cards) {
-    card.addEventListener("click", function() {
-        card.classList.add('open','show');
-        openCards.push(card);
-    });
+  card.addEventListener("click", function(e) {
+    if (openCards.length < 2) {
+      openCards.push(card);
+      card.classList.add("open", "show");
+    }
+    
+    if (openCards.length == 2) {
+      setTimeout(function() {
+        openCards.forEach(function(card) {
+          card.classList.remove("open", "show");
+        });
+      }, 1000);
+    }
+  });
 }
-
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(cards) {
@@ -36,14 +46,4 @@ function shuffle(cards) {
   }
 
   return cards;
-}
-
-// needs work
-shuffle(cards);
-for (let i = 0; i < cards.length; i++) {
-    cardList.innerHTML = "";
-    for (let card of cards) {
-        cardList.appendChild(card);
-        card.classList.remove('open', 'show')
-    }
 }
