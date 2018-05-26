@@ -3,6 +3,7 @@ const cards = [...document.querySelectorAll(".card")]; //array of cards
 const cardList = document.querySelector(".cards-wrapper"); //card deck
 let openCards = [];
 let matchedCards = [];
+let moves = 0;
 
 document.onLoad = gameStart();
 

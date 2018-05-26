@@ -71,6 +71,7 @@ h1 {
     pointer-events: none;
 }
 /* Tooltip Styling */
+/* Code from W3Schools https://www.w3schools.com/howto/howto_css_tooltip.asp */
 .tooltip {
     position: relative;
     display: inline-block;
