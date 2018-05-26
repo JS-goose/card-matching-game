@@ -66,6 +66,9 @@ h1 {
     background-color: lightcoral;
     border: 1px solid white;
 }
+.card.unclick {
+    pointer-events: none;
+}
 /* ****** */
 /* Footer */
 /* ****** */

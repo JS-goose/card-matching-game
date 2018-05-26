@@ -34,13 +34,13 @@ for (let card of cards) {
 }
 
 // Turns cards over and displays icon
-function turnOver(event) {
+function turnOver() {
   if (openCards.length < 2) {
-    event.target.classList.add("open", "show");
-    openCards.push(event.target);
+    this.classList.add('open','show','unclick');
+    openCards.push(this);
   }
   // shows cards in open cards array for 1 second if there are 2 cards
-  if (openCards.length == 2) {
+  if (openCards.length === 2) {
     cardMatches();
   }
 }
@@ -54,11 +54,11 @@ function cardMatches () {
       matchedCards.push(openCards[0]);
       matchedCards.push(openCards[1]);
     } else {
-      openCards[0].classList.remove('open','show');
-      openCards[1].classList.remove('open','show');
+      openCards[0].classList.remove('open','show','unclick');
+      openCards[1].classList.remove('open','show','unclick');
     }
     openCards = [];
-  }, 700);
+  }, 500);
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
