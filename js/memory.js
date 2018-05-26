@@ -9,7 +9,7 @@ document.onLoad = gameStart();
 
 // Starts the game
 function gameStart() {
-  let shuffledArr = shuffle(cards); // variable to hold shuffled deck
+  shuffle(cards); // variable to hold shuffled deck
   // Loop over existing cards
   for (let i = 0; i < cards.length; i++) {
     cardList.innerHTML = "";
@@ -25,7 +25,10 @@ resetButton.addEventListener("click", gameReset);
 
 function gameReset() {
   shuffle(cards);  
-  openCards = [];
+  openCards.forEach(function (card){
+    card.classList.remove('open','match','unclick','show');
+    openCards = [];
+  })
   matchedCards.forEach(function (card){
     card.classList.remove('open','match','unclick','show');
     matchedCards = [];
