@@ -10,7 +10,11 @@ document.onLoad = gameStart();
 // Starts the game
 function gameStart() {
   shuffle(cards); // variable to hold shuffled deck
-  // Loop over existing cards
+  shuffledCards();
+}
+
+// loop over existing cards to display shuffled cards
+function shuffledCards () {
   for (let i = 0; i < cards.length; i++) {
     cardList.innerHTML = "";
     // display shuffled cards
@@ -23,8 +27,9 @@ function gameStart() {
 // shuffles cards and resets current game
 resetButton.addEventListener("click", gameReset);
 
-function gameReset() {
-  shuffle(cards);  
+// ***TODO*** Shuffle does not work when reset button is clicked 
+function gameReset() {  
+  shuffledCards();
   openCards.forEach(function (card){
     card.classList.remove('open','match','unclick','show');
     openCards = [];
@@ -53,7 +58,7 @@ function turnOver() {
     cardMatches();
   }
 }
-// TODO - If I click any card twice, it is pushed to the matched cards array
+
 // checks to see if matches exist
 function cardMatches() {
   setTimeout(function() {
@@ -71,18 +76,18 @@ function cardMatches() {
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(cards) {
-  var currentIndex = cards.length,
+function shuffle(array) {
+  var currentIndex = array.length,
     temporaryValue,
     randomIndex;
 
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-    temporaryValue = cards[currentIndex];
-    cards[currentIndex] = cards[randomIndex];
-    cards[randomIndex] = temporaryValue;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
 
-  return cards;
+  return array;
 }
