@@ -44,13 +44,11 @@ function turnOver(event) {
     cardMatches();
   }
 }
-
+// TODO - If I click any card twice, it is pushed to the matched cards array
+// checks to see if matches exist
 function cardMatches () {
   setTimeout(function() {
-    // openCards.forEach(function(card) {
-    //   card.classList.remove("open", "show");
-    // });
-    if (openCards[0].type === openCards[1]) {
+    if (openCards[0].innerHTML === openCards[1].innerHTML) {
       openCards[0].classList.add('match');
       openCards[1].classList.add('match');
       matchedCards.push(openCards[0]);
@@ -62,12 +60,6 @@ function cardMatches () {
     openCards = [];
   }, 700);
 }
-setTimeout(function() {
-  openCards.forEach(function(card) {
-    card.classList.remove("open", "show");
-  });
-  openCards = [];
-}, 700);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(cards) {
