@@ -41,14 +41,33 @@ function turnOver(event) {
   }
   // shows cards in open cards array for 1 second if there are 2 cards
   if (openCards.length == 2) {
-    setTimeout(function() {
-      openCards.forEach(function(card) {
-        card.classList.remove("open", "show");
-      });
-      openCards = [];
-    }, 700);
+    cardMatches();
   }
 }
+
+function cardMatches () {
+  setTimeout(function() {
+    // openCards.forEach(function(card) {
+    //   card.classList.remove("open", "show");
+    // });
+    if (openCards[0].type === openCards[1]) {
+      openCards[0].classList.add('match');
+      openCards[1].classList.add('match');
+      matchedCards.push(openCards[0]);
+      matchedCards.push(openCards[1]);
+    } else {
+      openCards[0].classList.remove('open','show');
+      openCards[1].classList.remove('open','show');
+    }
+    openCards = [];
+  }, 700);
+}
+setTimeout(function() {
+  openCards.forEach(function(card) {
+    card.classList.remove("open", "show");
+  });
+  openCards = [];
+}, 700);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(cards) {
