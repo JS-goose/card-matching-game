@@ -20,7 +20,8 @@ h1 {
     justify-content: center;
 }
 .reset {
-    margin-left: 30%;
+    margin-left: 20%;
+    font-size: 1.3em;
 }
 .moves {
     margin-left: 5%;
@@ -78,18 +79,20 @@ h1 {
     visibility: hidden;
     width: 150px;
     background: rgba(128, 128, 128, 0.507);
-    color: rgba(255, 255, 255, 0.6);
+    color: black;
     text-align: center;
     position: absolute;
     z-index: 1;
     bottom: 125%;
     left: 50%;
     margin-left: -60px;
-    padding: 5px;
+    padding: 2%;
     border-radius: 2%;
+    border: 1px solid rgba(0,0,0,0.2);
 }
 .fa-retweet:hover .tip-text {
     visibility: visible;
+    font-size: 0.65em;
 }
 /* ****** */
 /* Footer */
