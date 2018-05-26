@@ -28,50 +28,16 @@ function gameStart() {
   }
 }
 
-// Event listener function for cards - DOES NOT WORK YET
-// function addEars(card) {
-//   card.addEventListener("click", function(card) {
-//     if (openCards.length < 2) {
-//       this.classList.add("open", "show");
-//       openCards.push(card);
-//     }
-//     // shows cards in open cards array for 1 second if there are 2 cards
-//     if (openCards.length == 2) {
-//       setTimeout(function(card) {
-//         openCards.forEach(function(card) {
-//           card.classList.remove("open", "show");
-//         });
-//         openCards = [];
-//       }, 700);
-//     }
-//   });
-// }
-
-// function addOpenCards(card) {
-//   // Displays card icon and pushes to open cards array
-//   if (openCards.length < 2) {
-//     card.classList.add("open", "show");
-//     openCards.push(card);
-//   }
-//   // shows cards in open cards array for 1 second if there are 2 cards
-//   if (openCards.length == 2) {
-//     setTimeout(function() {
-//       openCards.forEach(function(card) {
-//         card.classList.remove("open", "show");
-//       });
-//       openCards = [];
-//     }, 700);
-//   }
-// }
-
 // loop to add event listeners to all cards
 for (let card of cards) {
-  // addEars(card);
-  card.addEventListener("click", function() {
-    // Displays card icon and pushes to open cards array
+  card.addEventListener("click", turnOver);
+}
+
+// Turns cards over and displays icon
+function turnOver(event) {
   if (openCards.length < 2) {
-    card.classList.add("open", "show");
-    openCards.push(card);
+    event.target.classList.add("open", "show");
+    openCards.push(event.target);
   }
   // shows cards in open cards array for 1 second if there are 2 cards
   if (openCards.length == 2) {
@@ -82,7 +48,6 @@ for (let card of cards) {
       openCards = [];
     }, 700);
   }
-  });
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -101,6 +66,3 @@ function shuffle(cards) {
 
   return cards;
 }
-
-// if cards match, add .match class
-    // push to matched cards array
