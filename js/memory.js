@@ -1,4 +1,5 @@
-let cards = [...document.querySelectorAll(".card")]; //array of cards
+let allCards = document.getElementsByClassName('card'); 
+let cards = Array.from(allCards); //array of cards created from allCards
 const cardList = document.querySelector(".cards-wrapper"); //card deck
 let openCards = []; //array of open cards
 let matchedCards = []; //array of matches
@@ -6,12 +7,6 @@ const resetButton = document.querySelector(".reset"); //reset button
 let moves = 0;
 
 document.onLoad = gameStart();
-
-// Starts the game
-function gameStart() {
-  shuffle(cards); // variable to hold shuffled deck
-  shuffledCards();
-}
 
 // loop over existing cards to display shuffled cards
 function shuffledCards () {
@@ -24,12 +19,19 @@ function shuffledCards () {
   }
 }
 
+// Starts the game
+function gameStart() {
+  shuffledCards();
+  shuffle(cards); 
+}
+
+
 // shuffles cards and resets current game
 resetButton.addEventListener("click", gameReset);
 
 // ***TODO*** Shuffle does not work when reset button is clicked 
-function gameReset() {  
-  shuffledCards();
+function gameReset() { 
+  gameStart();
   openCards.forEach(function (card){
     card.classList.remove('open','match','unclick','show');
     openCards = [];
