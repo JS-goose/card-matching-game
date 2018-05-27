@@ -3,8 +3,7 @@
 - Build game win modal
 - Have modal pop up on game win
 - Reset moves on game win
-- Set star rating logic
-- Reset star rating on game win / game reset
+- Reset star rating on game win 
 - Build timer function
 - Reset timer on game win / game reset
 */
@@ -76,6 +75,9 @@ function gameReset() {
   })
   // restarts the timer
   // resets number of stars
+  stars.forEach(function (star) {
+  star.classList.remove('hidden');
+  })
 }
 
 // loop to add event listeners to all cards
