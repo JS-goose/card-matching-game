@@ -17,6 +17,7 @@ let matchedCards = []; //array of matches
 const resetButton = document.querySelector(".reset"); //reset button
 let moves = 0;
 let moveCounter = document.querySelector('.move-counter');
+let stars = [...document.querySelectorAll('.fa-star')];
 
 document.onLoad = gameStart();
 
@@ -40,7 +41,19 @@ function gameStart() {
 
 // moves counter functionality
 function movesDisplay () {
-  // if moves <= 8 display 3 stars
+  // if moves = 8 display 3 stars
+  if (moves > 8) {
+    stars[4].classList.add('hidden');
+  } 
+  if (moves > 12) {
+    stars[3].classList.add('hidden');
+  } 
+  if (moves > 16) {
+    stars[2].classList.add('hidden');
+  }
+  if (moves === 20) {
+    stars[1].classList.add('hidden');
+  } 
   // if moves <= 16 display 2 stars
   // if moves <= 20 display 1 star
 }
@@ -73,6 +86,7 @@ for (let card of cards) {
 // Turns cards over and displays icon
 function turnOver() {
   moves++;
+  movesDisplay();
   moveCounter.innerHTML = moves;
   if (openCards.length < 2) {
     this.classList.add("open", "show", "unclick");
