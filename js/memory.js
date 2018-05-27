@@ -1,3 +1,14 @@
+/*TO DO LIST
+- Set game win logic
+- Build game win modal
+- Have modal pop up on game win
+- Reset moves on game win
+- Set star rating logic
+- Reset star rating on game win / game reset
+- Build timer function
+- Reset timer on game win / game reset
+*/
+
 let allCards = document.getElementsByClassName('card'); 
 let cards = Array.from(allCards); //array of cards created from allCards
 const cardList = document.querySelector(".cards-wrapper"); //card deck
@@ -5,6 +16,7 @@ let openCards = []; //array of open cards
 let matchedCards = []; //array of matches
 const resetButton = document.querySelector(".reset"); //reset button
 let moves = 0;
+let moveCounter = document.querySelector('.move-counter');
 
 document.onLoad = gameStart();
 
@@ -22,15 +34,24 @@ function shuffledCards () {
 // Starts the game
 function gameStart() {
   shuffledCards();
-  shuffle(cards); 
+  shuffle(cards);
+  moves = 0; 
 }
 
+// moves counter functionality
+function movesDisplay () {
+  // if moves <= 8 display 3 stars
+  // if moves <= 16 display 2 stars
+  // if moves <= 20 display 1 star
+}
 
 // shuffles cards and resets current game
 resetButton.addEventListener("click", gameReset);
 
-// ***TODO*** Shuffle does not work when reset button is clicked 
+// reset functionality
 function gameReset() { 
+  moves = 0;
+  moveCounter.innerHTML = moves;
   gameStart();
   openCards.forEach(function (card){
     card.classList.remove('open','match','unclick','show');
@@ -51,6 +72,8 @@ for (let card of cards) {
 
 // Turns cards over and displays icon
 function turnOver() {
+  moves++;
+  moveCounter.innerHTML = moves;
   if (openCards.length < 2) {
     this.classList.add("open", "show", "unclick");
     openCards.push(this);
