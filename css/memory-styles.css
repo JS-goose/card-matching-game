@@ -13,7 +13,8 @@ h1 {
 }
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(1, minmax(200px, 1fr))
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    background: linear-gradient(lightblue, coral);
 }
 /* ****** */
 /* Content */
@@ -24,11 +25,14 @@ h1 {
     justify-content: center;
 }
 .reset {
-    margin-left: 12%;
+    margin-left: 10%;
     font-size: 1.3em;
 }
 .moves {
-    margin-left: 5%;
+    margin-left: 2%;
+}
+.timer {
+  margin-left: 2%;
 }
 /* Play Area */
 .cards-wrapper {
