@@ -11,6 +11,10 @@ body {
 h1 {
     text-align: center;
 }
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr))
+}
 /* ****** */
 /* Content */
 /* ****** */
@@ -29,7 +33,7 @@ h1 {
 /* Play Area */
 .cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, minmax(100px, 100%));
     justify-items: center;
     grid-gap: 20px;
     list-style: none;
@@ -39,7 +43,9 @@ h1 {
 }
 .play-wrapper {
     display: grid;
+    grid-template-columns: repeat(1, minmax(100px, 50%));
     justify-content: center;
+    grid-gap: 20px;
 }
 .card {
     display: grid;
