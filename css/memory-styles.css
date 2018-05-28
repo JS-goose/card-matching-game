@@ -41,8 +41,9 @@ h1 {
     justify-content: center;
     grid-gap: 35px;
     list-style: none;
-    border: 1px solid black;
+    border: 1px solid white;
     background-color: lightblue;
+    box-shadow: 10px 10px 30px;
     padding: 4% 4% 4% 2%;
 }
 .play-wrapper {
@@ -63,7 +64,9 @@ h1 {
     cursor: pointer;
 }
 .card.open {
-    transform: rotateY(0);
+    transform: rotateY(180);
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
     cursor: default;
     background-color: rgba(12, 28, 220, 0.6);
 }
