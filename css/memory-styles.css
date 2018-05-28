@@ -109,12 +109,29 @@ h1 {
 /*  Modal */
 /* ****** */
 .modal {
-    background: linear-gradient(coral, lightblue);
+    display: none;
+    background-color: rgba(0,0,0,0.5);
     text-align: center;
-    height: 180px;
-    width: 400px;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
 }
-
+.modal-content {
+    border: 1px solid white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 80%;
+    background: linear-gradient(coral, lightblue)
+}
+.close-button {
+   color: white;
+   float: right; 
+}
+.close:hover,
+.close:focus {
+    cursor: pointer;
+}
 /* ****** */
 /* Footer */
 /* ****** */
