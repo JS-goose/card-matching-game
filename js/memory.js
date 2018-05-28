@@ -21,7 +21,9 @@ let totalSeconds = 0;
 
 // Timer functionality
 // snippet from Stack Overflow https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-let timeInterval = setInterval(timer, 1000);
+function timeInterval() {
+  setInterval(timer, 1000);
+}
 
 function timer() {
   totalSeconds++;
@@ -90,6 +92,10 @@ for (let card of cards) {
 
 // Turns cards over and displays icon
 function turnOver() {
+  // Timer starts on first move
+  if (moves == 1) {
+    timeInterval();
+  }
   moves++;
   movesDisplay();
   moveCounter.innerHTML = moves;
