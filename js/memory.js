@@ -6,15 +6,20 @@
 - Reset star rating on game win 
 - Reset timer on game win 
 */
+// Card and deck variables
 let allCards = document.getElementsByClassName("card");
 let cards = Array.from(allCards); //array of cards created from allCards
 const cardList = document.querySelector(".cards-wrapper"); //card deck
 let openCards = []; //array of open cards
 let matchedCards = []; //array of matches
-const resetButton = document.querySelector(".reset"); //reset button
+// Reset button variable
+const resetButton = document.querySelector(".reset"); 
+// Moves and Stars variables
 let moves = 0;
 let moveCounter = document.querySelector(".move-counter");
 let stars = [...document.querySelectorAll(".fa-star")];
+
+// Timer variables
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
 let totalSeconds = 0;
