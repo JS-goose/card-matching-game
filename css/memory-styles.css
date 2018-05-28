@@ -109,7 +109,7 @@ h1 {
 /*  Modal */
 /* ****** */
 .modal {
-    /* display: none; */
+    display: none;
     background-color: rgba(0,0,0,0.5);
     text-align: center;
     position: fixed;

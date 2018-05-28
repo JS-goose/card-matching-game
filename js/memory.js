@@ -23,6 +23,7 @@ const newGameButton = document.querySelector("#new-game");
 const totalMoves = document.querySelector('#total-moves');
 const gameTime = document.querySelector('#time');
 const starRating = document.querySelector('#star-rating');
+const closeButton = document.querySelector('#close-button');
 let totalStarCounter = 0;
 
 document.onLoad = gameStart();
@@ -177,4 +178,8 @@ function winGame() {
 newGameButton.addEventListener('click', function(){
   window.location = window.location;
 });
+
+closeButton.addEventListener('click', function(){
+  modal.style.display = 'none';
+})
 
