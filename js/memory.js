@@ -164,7 +164,10 @@ function winGame() {
     stars.forEach(function(star){
       if (!star.classList.contains('hidden')) {
         totalStarCounter++;
-        starRating.innerHTML = totalStarCounter;
+        starRating.innerHTML = totalStarCounter + " stars.";
+      }
+      if (totalStarCounter.length === 1) {
+        starRating.innerHTML = totalStarCounter + " star."
       }
     });
   }

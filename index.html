@@ -31,11 +31,11 @@
 
             <section class="info-area">
                 <div class="stars">
-                    <i class="fas fa-star 1"></i>
-                    <i class="fas fa-star 2"></i>
-                    <i class="fas fa-star 3"></i>
-                    <i class="fas fa-star 4"></i>
-                    <i class="fas fa-star 5"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
 
                 <div class="timer">
@@ -117,15 +117,16 @@
 
             <div class="modal">
                 <div class="modal-content">
-                    <p>Congratulations!</p>
+                    <span id="close-button">X</span>
+                    <h1>Congratulations!</h1>
                     <p>You've successfully matched all cards and won!</p>
                     <p class="info">It took
                         <span id="total-moves"></span> moves, with a time of
                         <span id="time"></span>, and you earned
-                        <span id="star-rating"></span> stars.
+                        <span id="star-rating"></span>
                     </p>
                     <p>Would you like to play again?</p>
-                    <button id="new-game">Play again?</button>
+                    <button id="new-game">Yes</button>
                 </div>
             </div>
 
