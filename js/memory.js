@@ -108,7 +108,7 @@ function cardMatches() {
       openCards[1].classList.remove("open", "show", "unclick");
     }
     // Winning the game logic
-    if (matchedCards.length == 2) {
+    if (matchedCards.length == 16) {
       winGame();
     }
     // clears the open cards array to test the next 2 cards that are clicked
@@ -157,7 +157,7 @@ function pad(val) {
 // Winning the game calls this function and displays the modal
 function winGame() {
   clearInterval(interval);
-  if (matchedCards.length == 2) {
+  if (matchedCards.length == 16) {
     modal.style.display = "block";
     totalMoves.innerHTML = moves
     gameTime.innerHTML = minutes.innerHTML + ":" + seconds.innerHTML;
@@ -166,8 +166,7 @@ function winGame() {
       if (!star.classList.contains('hidden')) {
         totalStarCounter++;
         starRating.innerHTML = totalStarCounter + " stars.";
-      }
-      if (totalStarCounter.length === 1) {
+      } else if (totalStarCounter == 1) {
         starRating.innerHTML = totalStarCounter + " star."
       }
     });

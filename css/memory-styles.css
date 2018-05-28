@@ -65,7 +65,7 @@ h1 {
 }
 .card.open {
     transform: rotateY(180);
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
     transform-style: preserve-3d;
     cursor: default;
     background-color: rgba(12, 28, 220, 0.6);
