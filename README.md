@@ -4,7 +4,9 @@ These are the files for the second project in Udacity's Front End Web Developmen
 The live, playable game can be found [here](https://codepen.io/JS-goose/pen/xjoZBZ).
 
 # Project Design
-I wanted this game to have a beach theme without being too beach-like (shells, sand, etc.).  I opted for pastel colors and a font that, I think, accomplishes just what I was looking for.
+I wanted this game to have a beach theme without being too beach-like (shells, sand, etc.).  I opted for pastel colors and a font that, I think, accomplishes just what I was looking for.  I'd love to know what you think!
+
+![alt text](https://raw.githubusercontent.com/JS-goose/udacity-project-2/dev/img/board.png "Matching Game preview")
 
 # Playing Locally
 Fork a copy of the repo and then download the files to your local machine.  Once you have the files, simply open the folder and then open index.html in your favorite browser to start playing.
