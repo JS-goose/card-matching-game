@@ -39,8 +39,9 @@
                 </div>
 
                 <div class="timer">
-                    Game Duration 
-                    <span id="minutes">00</span>:<span id="seconds">00</span>
+                    Game Duration
+                    <span id="minutes">00</span>:
+                    <span id="seconds">00</span>
                 </div>
 
                 <div class="moves">
@@ -113,6 +114,21 @@
                     </ul>
                 </div>
             </section>
+
+            <div class="modal">
+                <div class="modal-content">
+                    <span id="close">X</span>
+                    <p>Congratulations!</p>
+                    <p>You've successfully matched all cards and won!</p>
+                    <p class="info">It took
+                        <span id="moves"></span> moves, with a time of
+                        <span id="time"></span>, and you earned
+                        <span id="star-rating"></span>.
+                    </p>
+                    <p>Would you like to play again?</p>
+                    <button id="new-game">Play again?</button>
+                </div>
+            </div>
 
             <section class="footer-area">
                 <footer class="footer">

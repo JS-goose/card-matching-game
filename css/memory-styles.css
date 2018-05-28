@@ -101,9 +101,20 @@ h1 {
     visibility: visible;
     font-size: 0.65em;
 }
+/* Used to hide stars depending on moves counter */
 .hidden {
     visibility: hidden;
 }
+/* ****** */
+/*  Modal */
+/* ****** */
+.modal {
+    background: linear-gradient(coral, lightblue);
+    text-align: center;
+    height: 180px;
+    width: 400px;
+}
+
 /* ****** */
 /* Footer */
 /* ****** */
