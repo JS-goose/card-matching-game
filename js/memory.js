@@ -1,10 +1,4 @@
 /*TO DO LIST
-- Set game win logic
-- Build game win modal
-- Have modal pop up on game win
-- Reset moves on game win
-- Reset star rating on game win 
-- Reset timer on game win 
 */
 // Card and deck variables
 let allCards = document.getElementsByClassName("card");
@@ -21,10 +15,14 @@ let stars = [...document.querySelectorAll(".fa-star")];
 // Timer variables
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
+let interval;
 let totalSeconds = 0;
 // Modal variables
 const modal = document.querySelector(".modal");
 const newGameButton = document.querySelector("#new-game");
+const totalMoves = document.querySelector('#total-moves');
+const gameTime = document.querySelector('#time');
+const starRating = document.querySelector('#star-rating');
 
 document.onLoad = gameStart();
 
@@ -107,6 +105,11 @@ function cardMatches() {
       openCards[0].classList.remove("open", "show", "unclick");
       openCards[1].classList.remove("open", "show", "unclick");
     }
+    // Winning the game logic
+    if (matchedCards.length == 2) {
+      winGame();
+    }
+    // clears the open cards array to test the next 2 cards that are clicked
     openCards = [];
   }, 500);
 }
@@ -131,7 +134,7 @@ function shuffle(array) {
 // Timer functionality
 // snippet from Stack Overflow https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 function timeInterval() {
-  setInterval(timer, 1000);
+  interval = setInterval(timer, 1000);
 }
 
 function timer() {
@@ -149,13 +152,22 @@ function pad(val) {
   }
 }
 
-// Winning the game logic
+// Winning the game calls this function and displays the modal
 function winGame() {
+  clearInterval(interval);
   if (matchedCards.length == 2) {
-    console.log("winning");
     modal.style.display = "block";
+    totalMoves.innerHTML = moves
+    gameTime.innerHTML = minutes.innerHTML + ":" + seconds.innerHTML;
+    starRating.innerHTML = stars.forEach(function(cv,i,stars){
+      if (stars[i] !== i.classList('hidden')) { 
+        return stars[i].length
+      }
+    })
   }
 }
-winGame();
-// Modal functionality
-// on win, modal pops up
+
+// Clicking the "play again" button on the modal starts a new game
+newGameButton.addEventListener('click', function(){
+  window.location = window.location;
+});
