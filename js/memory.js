@@ -13,16 +13,18 @@ const cardList = document.querySelector(".cards-wrapper"); //card deck
 let openCards = []; //array of open cards
 let matchedCards = []; //array of matches
 // Reset button variable
-const resetButton = document.querySelector(".reset"); 
+const resetButton = document.querySelector(".reset");
 // Moves and Stars variables
 let moves = 0;
 let moveCounter = document.querySelector(".move-counter");
 let stars = [...document.querySelectorAll(".fa-star")];
-
 // Timer variables
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
 let totalSeconds = 0;
+// Modal variables
+const modal = document.querySelector(".modal");
+const newGameButton = document.querySelector("#new-game");
 
 document.onLoad = gameStart();
 
@@ -146,3 +148,14 @@ function pad(val) {
     return valString;
   }
 }
+
+// Winning the game logic
+function winGame() {
+  if (matchedCards.length == 2) {
+    console.log("winning");
+    modal.style.display = "block";
+  }
+}
+winGame();
+// Modal functionality
+// on win, modal pops up
