@@ -24,6 +24,7 @@ h1 {
     color: white;
     font-family: 'Permanent Marker', cursive;
     font-size: 1.2em;
+    text-shadow: 1px 1px 1px black;
 }
 
 /* ****** */
@@ -35,7 +36,7 @@ h1 {
     justify-content: center;
 }
 .reset {
-    margin-left: 10%;
+    margin-left: 8%;
     font-size: 1.5em;
     color: coral;
     text-shadow: 1px 1px 1px black;
@@ -80,9 +81,11 @@ h1 {
     width: 150px;
     height: 150px;
     border: 1px solid lightcoral;
+    border-radius: 48%;
     background-color: rgba(9, 124, 177, 0.6);
     color: lightgoldenrodyellow;
     cursor: pointer;
+    /* box-shadow: 6px 5px 20px rgba(0,0,0,0.5); */
 }
 .card.open {
     transform: rotateY(180);
@@ -90,9 +93,12 @@ h1 {
     transform-style: preserve-3d;
     cursor: default;
     background-color: rgba(15, 75, 153, 0.8);
+    box-shadow: 6px 5px 20px rgba(0,0,0,0.5);
+
 }
 .card.show {
     font-size: 3em;
+    text-shadow: 1px 1px 1px black;
 }
 .card.match {
     font-size: 3em;
