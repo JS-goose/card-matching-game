@@ -4,8 +4,7 @@
 - Have modal pop up on game win
 - Reset moves on game win
 - Reset star rating on game win 
-- Build timer function
-- Reset timer on game win / game reset
+- Reset timer on game win 
 */
 let allCards = document.getElementsByClassName("card");
 let cards = Array.from(allCards); //array of cards created from allCards
@@ -74,8 +73,6 @@ function movesDisplay() {
   if (moves === 20) {
     stars[1].classList.add("hidden");
   }
-  // if moves <= 16 display 2 stars
-  // if moves <= 20 display 1 star
 }
 
 // resets current game
@@ -83,23 +80,7 @@ resetButton.addEventListener("click", gameReset);
 
 // reset functionality
 function gameReset() {
-  location = location;
-  // shuffledCards();
-  // gameStart();
-  // moves = 0;
-  // moveCounter.innerHTML = moves;
-  // openCards.forEach(function(card) {
-  //   card.classList.remove("open", "match", "unclick", "show");
-  //   openCards = [];
-  // });
-  // matchedCards.forEach(function(card) {
-  //   card.classList.remove("open", "match", "unclick", "show");
-  //   matchedCards = [];
-  // });
-  // // resets number of stars
-  // stars.forEach(function(star) {
-  //   star.classList.remove("hidden");
-  // });
+  window.location = window.location;
 }
 
 // loop to add event listeners to all cards
