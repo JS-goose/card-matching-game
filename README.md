@@ -1,4 +1,4 @@
-# udacity-project-2
+# Udacity Project 2 - Memory Game
 These are the files for the second project in Udacity's Front End Web Development Nanodegree.  All of the code was written by me (Jonathan Sexton) unless otherwise stated (snippets are credited in code base).
 
 The live, playable game can be found [here](https://codepen.io/JS-goose/pen/xjoZBZ).
@@ -25,7 +25,7 @@ The game will work without this font but I think it looks better with the font.
 I am the only contributor to this code (besdies the aforementioned credited sources) and the project is complete (pending a Udacity review).  Therefor I will not be accpeting pull requests.
 
 # Licensing 
-This project is licensed under the [MIT License](https://github.com/JS-goose/udacity-project-2/blob/master/LICENSE) and you are **free** to:
+This project is licensed under the [MIT License](https://github.com/JS-goose/udacity-project-2/blob/master/LICENSE) and you are **free** to do the following with the code, subject to the conditions provided within the license found at the link above:
 * use
 * copy
 * modify
@@ -34,4 +34,3 @@ This project is licensed under the [MIT License](https://github.com/JS-goose/uda
 * distribute
 * sublicense
 * sell
-copies of the code, subject to the conditions provided within the license found at the top of this section.
