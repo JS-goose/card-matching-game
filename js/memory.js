@@ -23,6 +23,7 @@ const newGameButton = document.querySelector("#new-game");
 const totalMoves = document.querySelector('#total-moves');
 const gameTime = document.querySelector('#time');
 const starRating = document.querySelector('#star-rating');
+let totalStarCounter = 0;
 
 document.onLoad = gameStart();
 
@@ -159,11 +160,13 @@ function winGame() {
     modal.style.display = "block";
     totalMoves.innerHTML = moves
     gameTime.innerHTML = minutes.innerHTML + ":" + seconds.innerHTML;
-    starRating.innerHTML = stars.forEach(function(cv,i,stars){
-      if (stars[i] !== i.classList('hidden')) { 
-        return stars[i].length
+    // Loops through all stars, if they do not contain the class 'hidden' the totalStarCounter is incremented then displayed on winning modal
+    stars.forEach(function(star){
+      if (!star.classList.contains('hidden')) {
+        totalStarCounter++;
+        starRating.innerHTML = totalStarCounter;
       }
-    })
+    });
   }
 }
 
@@ -171,3 +174,4 @@ function winGame() {
 newGameButton.addEventListener('click', function(){
   window.location = window.location;
 });
+
