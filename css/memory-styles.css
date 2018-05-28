@@ -141,6 +141,7 @@ h1 {
 /* ****** */
 /*  Modal */
 /* ****** */
+/* Some information about styling (z-index info) was obtained from https://www.w3schools.com/howto/howto_css_modals.asp */
 .modal {
     display: none;
     background-color: rgba(0,0,0,0.5);
