@@ -1,7 +1,7 @@
 # Udacity Project 2 - Memory Game
 These are the files for the second project in Udacity's Front End Web Development Nanodegree.  All of the code was written by me (Jonathan Sexton) unless otherwise stated (snippets are credited in code base).
 
-The live, playable game can be found [here](https://codepen.io/JS-goose/pen/xjoZBZ).
+The live, playable game can be found [here](https://codepen.io/JS-goose/full/xjoZBZ/).
 
 # Project Design
 I wanted this game to have a beach theme without being too beach-like (shells, sand, etc.).  I opted for pastel colors and a font that, I think, accomplishes just what I was looking for.  I'd love to know what you think!
