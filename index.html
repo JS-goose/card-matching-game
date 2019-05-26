@@ -4,147 +4,168 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+  <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Project 2 - Memory Game</title>
-    <meta name="description" content="a memory matching web based game">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/memory-styles.css">
+    <meta name="description" content="a memory matching web based game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/memory-styles.css" />
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-        crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker"
+      rel="stylesheet"
+    />
+    <!-- Jasmine Testing Links -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="jasmine/lib/jasmine-{#.#.#}/jasmine_favicon.png"
+    />
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-{#.#.#}/jasmine.css" />
 
-<body>
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/jasmine-html.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-{#.#.#}/boot.js"></script>
+  </head>
+
+  <body>
     <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
 
     <div class="wrapper">
-        <main>
-            <header class="title">
-                <h1>Matching Game</h1>
-            </header>
+      <main>
+        <header class="title">
+          <h1>Matching Game</h1>
+        </header>
 
-            <section class="info-area">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
+        <section class="info-area">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
 
-                <div class="timer">
-                    Game Duration -
-                    <span id="minutes">00</span> :
-                    <span id="seconds">00</span>
-                </div>
+          <div class="timer">
+            Game Duration -
+            <span id="minutes">00</span> :
+            <span id="seconds">00</span>
+          </div>
 
-                <div class="moves">
-                    Number of Moves:
-                    <span class="move-counter">0</span>
-                </div>
+          <div class="moves">
+            Number of Moves:
+            <span class="move-counter">0</span>
+          </div>
 
+          <!-- Tooltip to popup on hover -->
+          <div class="reset tooltip">
+            <i class="fas fa-retweet">
+              <span class="tip-text">Resets Current Game!</span>
+            </i>
+          </div>
+        </section>
 
-                <!-- Tooltip to popup on hover -->
-                <div class="reset tooltip">
-                    <i class="fas fa-retweet">
-                        <span class="tip-text">Resets Current Game!</span>
-                    </i>
-                </div>
-            </section>
+        <section class="play-area">
+          <div class="play-wrapper">
+            <ul class="cards-list">
+              <div class="cards-wrapper">
+                <li class="card helicopter">
+                  <i class="icon fas fa-helicopter"></i>
+                </li>
+                <li class="card peace">
+                  <i class="icon fab fa-angellist"></i>
+                </li>
+                <li class="card poop">
+                  <i class="icon fas fa-poo"></i>
+                </li>
+                <li class="card frog">
+                  <i class="icon fas fa-frog"></i>
+                </li>
+                <li class="card monster">
+                  <i class="icon fab fa-optin-monster"></i>
+                </li>
+                <li class="card bird">
+                  <i class="icon fab fa-earlybirds"></i>
+                </li>
+                <li class="card poop">
+                  <i class="icon fas fa-poo"></i>
+                </li>
+                <li class="card chess">
+                  <i class="icon fas fa-chess-knight"></i>
+                </li>
+                <li class="card jet">
+                  <i class="icon fas fa-fighter-jet"></i>
+                </li>
+                <li class="card monster">
+                  <i class="icon fab fa-optin-monster"></i>
+                </li>
+                <li class="card chess">
+                  <i class="icon fas fa-chess-knight"></i>
+                </li>
+                <li class="card jet">
+                  <i class="icon fas fa-fighter-jet"></i>
+                </li>
+                <li class="card bird">
+                  <i class="icon fab fa-earlybirds"></i>
+                </li>
+                <li class="card helicopter">
+                  <i class="icon fas fa-helicopter"></i>
+                </li>
+                <li class="card frog">
+                  <i class="icon fas fa-frog"></i>
+                </li>
+                <li class="card peace">
+                  <i class="icon fab fa-angellist"></i>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </section>
 
-            <section class="play-area">
-                <div class="play-wrapper">
-                    <ul class="cards-list">
-                        <div class="cards-wrapper">
-                            <li class="card helicopter">
-                                <i class="icon fas fa-helicopter"></i>
-                            </li>
-                            <li class="card peace">
-                                <i class="icon fab fa-angellist"></i>
-                            </li>
-                            <li class="card poop">
-                                <i class="icon fas fa-poo"></i>
-                            </li>
-                            <li class="card frog">
-                                <i class="icon fas fa-frog"></i>
-                            </li>
-                            <li class="card monster">
-                                <i class="icon fab fa-optin-monster"></i>
-                            </li>
-                            <li class="card bird">
-                                <i class="icon fab fa-earlybirds"></i>
-                            </li>
-                            <li class="card poop">
-                                <i class="icon fas fa-poo"></i>
-                            </li>
-                            <li class="card chess">
-                                <i class="icon fas fa-chess-knight"></i>
-                            </li>
-                            <li class="card jet">
-                                <i class="icon fas fa-fighter-jet"></i>
-                            </li>
-                            <li class="card monster">
-                                <i class="icon fab fa-optin-monster"></i>
-                            </li>
-                            <li class="card chess">
-                                <i class="icon fas fa-chess-knight"></i>
-                            </li>
-                            <li class="card jet">
-                                <i class="icon fas fa-fighter-jet"></i>
-                            </li>
-                            <li class="card bird">
-                                <i class="icon fab fa-earlybirds"></i>
-                            </li>
-                            <li class="card helicopter">
-                                <i class="icon fas fa-helicopter"></i>
-                            </li>
-                            <li class="card frog">
-                                <i class="icon fas fa-frog"></i>
-                            </li>
-                            <li class="card peace">
-                                <i class="icon fab fa-angellist"></i>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </section>
+        <div class="modal">
+          <div class="modal-content">
+            <span id="close-button">X</span>
+            <h1>Congratulations!</h1>
+            <p>You've successfully matched all cards and won!</p>
+            <p class="info">
+              It took <span id="total-moves"></span> moves, with a time of <span id="time"></span>,
+              and you earned
+              <span id="star-rating"></span>
+            </p>
+            <p>Would you like to play again?</p>
+            <button id="new-game">Yes</button>
+          </div>
+        </div>
 
-            <div class="modal">
-                <div class="modal-content">
-                    <span id="close-button">X</span>
-                    <h1>Congratulations!</h1>
-                    <p>You've successfully matched all cards and won!</p>
-                    <p class="info">It took
-                        <span id="total-moves"></span> moves, with a time of
-                        <span id="time"></span>, and you earned
-                        <span id="star-rating"></span>
-                    </p>
-                    <p>Would you like to play again?</p>
-                    <button id="new-game">Yes</button>
-                </div>
+        <section class="footer-area">
+          <footer class="footer">
+            <div class="copyright">
+              <p>
+                This project was built by me ©
+                <a href="https://www.powerofgoose.com" target="_blank">Jonathan Sexton</a> 2018.
+                Icons by <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>. Fonts
+                by <a href="https://fonts.google.com" target="_blank">Google Fonts</a>.
+              </p>
             </div>
-
-            <section class="footer-area">
-                <footer class="footer">
-                    <div class="copyright">
-                        <p>This project was built by me ©
-                            <a href="https://www.powerofgoose.com" target="_blank">Jonathan Sexton</a> 2018. Icons by
-                            <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>. Fonts by
-                            <a href="https://fonts.google.com" target="_blank">Google Fonts</a>.</p>
-                    </div>
-                </footer>
-            </section>
-        </main>
+          </footer>
+        </section>
+      </main>
     </div>
     <script src="./js/memory.js" async defer></script>
-</body>
-
+  </body>
 </html>
